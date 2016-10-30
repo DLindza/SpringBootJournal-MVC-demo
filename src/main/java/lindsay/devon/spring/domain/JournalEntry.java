@@ -27,7 +27,7 @@ public class JournalEntry {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String title;
-    private Date dateCreated;
+    private Date created;
     private String summary;
 
     @Transient
@@ -36,7 +36,7 @@ public class JournalEntry {
     public JournalEntry(String title, String summary, String date) throws ParseException {
         this.title = title;
         this.summary = summary;
-        this.dateCreated = format.parse(date);
+        this.created = format.parse(date);
     }
 
     JournalEntry() {}
@@ -58,12 +58,12 @@ public class JournalEntry {
     }
 
     @JsonSerialize(using = JsonDateSerializer.class)
-    public Date getDateCreated() {
-        return dateCreated;
+    public Date getCreated() {
+        return created;
     }
 
-    public void setDateCreated(Date created) {
-        this.dateCreated = created;
+    public void setCreated(Date created) {
+        this.created = created;
     }
 
     public String getSummary() {
@@ -75,8 +75,8 @@ public class JournalEntry {
     }
 
     @JsonIgnore
-    public String getDateCreatedAsShort() {
-        return format.format(dateCreated);
+    public String getCreatedAsShort() {
+        return format.format(created);
     }
 
     public String toString() {
@@ -88,7 +88,7 @@ public class JournalEntry {
         value.append(", Summary: ");
         value.append(summary);
         value.append(", Created: ");
-        value.append(format.format(dateCreated));
+        value.append(format.format(created));
         value.append(")");
         return value.toString();
     }
