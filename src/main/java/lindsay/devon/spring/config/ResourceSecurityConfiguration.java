@@ -12,20 +12,24 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-@Configuration
-@EnableGlobalAuthentication
-public class ResourceSecurityConfiguration extends WebSecurityConfigurerAdapter {
+//@Configuration
+//@EnableGlobalAuthentication
+public class ResourceSecurityConfiguration {
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .antMatchers("/").permitAll()
-                .antMatchers("/api/**").authenticated()
-                .and()
-                // - default browswer login   .httpBasic();
-                // - default login page .formLogin();
-                .formLogin().loginPage("/login").permitAll()
-                .and()
-                .logout().permitAll();
-    }
+//        extends WebSecurityConfigurerAdapter {
+
+//    @Override
+//    protected void configure(HttpSecurity http) throws Exception {
+//        http.authorizeRequests()
+//                .antMatchers("/").permitAll()
+//                .antMatchers("/api/**").authenticated()
+//                .and()
+//                // - default browswer login   .httpBasic();
+//                // - default login page .formLogin();
+//                .formLogin().loginPage("/login").permitAll()
+//                .and()
+//                .logout().permitAll();
+//    }
+
+    //NOT NEEDED WITH OAUTH
 }

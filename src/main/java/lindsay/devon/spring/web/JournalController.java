@@ -14,7 +14,7 @@ import lindsay.devon.spring.repository.JournalRepository;
 @RestController
 public class JournalController {
     private static final String VIEW_INDEX = "index";
-    private static final String VIEW_LOGIN = "login";
+    //private static final String VIEW_LOGIN = "login";
 
     @Autowired
     JournalRepository repo;
@@ -26,11 +26,12 @@ public class JournalController {
         return modelAndView;
     }
 
-    @RequestMapping(value="/login")
-    public ModelAndView login(ModelAndView modelAndView){
-        modelAndView.setViewName(VIEW_LOGIN);
-        return modelAndView;
-    }
+//    @RequestMapping(value="/login")
+//    public ModelAndView login(ModelAndView modelAndView){
+//        modelAndView.setViewName(VIEW_LOGIN);
+//        return modelAndView;
+//    }
+    //NOT NEEDED WITH OAUTH
 
 
 

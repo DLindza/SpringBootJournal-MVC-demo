@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en-US" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org"  >
+      <!--xmlns:sec="http://www.thymeleaf.org/extras/spring-security">-->
 <head>
   <meta charset="utf-8"></meta>
   <meta http-equiv="Content-Type" content="text/html"></meta>
@@ -12,11 +13,12 @@
 <body>
 <div class="container">
   <h1>Spring Boot Journal</h1>
-  <p sec:authorize="isAuthenticated()">
-  <form th:action="@{/logout}" method="post">
-    <input type="submit" value="Sign Out"/>
-  </form>
-  </p>
+  <!--NOT NEEDED WITH OAUTH-->
+  <!--<p sec:authorize="isAuthenticated()">-->
+  <!--<form th:action="@{/logout}" method="post">-->
+    <!--<input type="submit" value="Sign Out"/>-->
+  <!--</form>-->
+  <!--</p>-->
   <ul class="timeline">
     <div th:each="entry,status : ${journal}">
       <li th:attr="class=${status.odd}?'timeline-inverted':''">
