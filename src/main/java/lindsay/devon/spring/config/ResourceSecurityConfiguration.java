@@ -22,7 +22,10 @@ public class ResourceSecurityConfiguration extends WebSecurityConfigurerAdapter 
                 .antMatchers("/").permitAll()
                 .antMatchers("/api/**").authenticated()
                 .and()
-                //.httpBasic();
-                .formLogin();
+                // - default browswer login   .httpBasic();
+                // - default login page .formLogin();
+                .formLogin().loginPage("/login").permitAll()
+                .and()
+                .logout().permitAll();
     }
 }
